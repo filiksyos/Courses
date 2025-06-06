@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☁️ Cloud Computing Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>☁️ Cloud Computing Explorer</h1>
+            <p>Interactive journey through cloud services, security, and IoT integration!</p>
+        </header>
+
+        <div class="dashboard" id="dashboard">
+            <div class="topic-cards">
+                <div class="card services-card" onclick="openTopic('services')">
+                    <div class="card-icon">🏗️</div>
+                    <h3>Chapter 3: Cloud Services</h3>
+                    <p>IaaS, PaaS, SaaS & DevOps magic!</p>
+                    <div class="card-progress">8 mini-adventures</div>
+                </div>
+
+                <div class="card security-card" onclick="openTopic('security')">
+                    <div class="card-icon">🔒</div>
+                    <h3>Chapter 4: Cloud Security</h3>
+                    <p>Protecting data in the cloud!</p>
+                    <div class="card-progress">7 mini-adventures</div>
+                </div>
+
+                <div class="card iot-card" onclick="openTopic('iot')">
+                    <div class="card-icon">🌐</div>
+                    <h3>Chapter 5: Cloud in IoT</h3>
+                    <p>Smart devices meet the cloud!</p>
+                    <div class="card-progress">8 mini-adventures</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="random-btn" onclick="randomChallenge()">
+                    🎲 Random Challenge
+                </button>
+                <button class="memory-hacks-btn" onclick="showMemoryHacks()">
+                    🧠 Memory Hacks
+                </button>
+            </div>
+        </div>
+
+        <!-- Topic Content Container -->
+        <div class="topic-content" id="topicContent" style="display: none;">
+            <div class="topic-header">
+                <button class="back-btn" onclick="goBack()">← Back to Dashboard</button>
+                <h2 id="topicTitle"></h2>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="main-content" id="mainContent"></div>
+                <div class="memory-sidebar" id="memorySidebar">
+                    <h4>🧠 Memory Hack</h4>
+                    <div id="memoryHackContent"></div>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <button id="prevBtn" onclick="previousChunk()" disabled>← Previous</button>
+                <span id="chunkCounter">1 / 8</span>
+                <button id="nextBtn" onclick="nextChunk()">Next →</button>
+            </div>
+        </div>
+
+        <!-- Memory Hacks Modal -->
+        <div class="modal" id="memoryModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>🧠 Memory Hacks Collection</h3>
+                    <span class="close" onclick="closeModal()">&times;</span>
+                </div>
+                <div class="modal-body" id="memoryModalContent"></div>
+            </div>
+        </div>
+
+        <!-- Quiz Results Modal -->
+        <div class="modal" id="quizModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="quizTitle">🎯 Quiz Result</h3>
+                    <span class="close" onclick="closeQuizModal()">&times;</span>
+                </div>
+                <div class="modal-body" id="quizModalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1000;"></canvas>
+
+    <!-- Scripts -->
+    <script src="data/services.js"></script>
+    <script src="data/security.js"></script>
+    <script src="data/iot.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 

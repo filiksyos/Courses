@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🗄️ Database Mastery Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗄️ Database Mastery Explorer</h1>
+            <p>Interactive journey through security, concurrency, and recovery!</p>
+        </header>
+
+        <div class="dashboard" id="dashboard">
+            <div class="topic-cards">
+                <div class="card security-card" onclick="openTopic('security')">
+                    <div class="card-icon">🔐</div>
+                    <h3>Chapter 5: Security</h3>
+                    <p>Protect your data fortress!</p>
+                    <div class="card-progress">6 mini-adventures</div>
+                </div>
+
+                <div class="card concurrency-card" onclick="openTopic('concurrency')">
+                    <div class="card-icon">⚡</div>
+                    <h3>Chapter 3: Concurrency</h3>
+                    <p>Master the art of coordination!</p>
+                    <div class="card-progress">8 mini-adventures</div>
+                </div>
+
+                <div class="card recovery-card" onclick="openTopic('recovery')">
+                    <div class="card-icon">🔄</div>
+                    <h3>Chapter 4: Recovery</h3>
+                    <p>Phoenix from the ashes!</p>
+                    <div class="card-progress">7 mini-adventures</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="random-btn" onclick="randomChallenge()">
+                    🎲 Random Challenge
+                </button>
+                <button class="memory-hacks-btn" onclick="showMemoryHacks()">
+                    🧠 Memory Hacks
+                </button>
+            </div>
+        </div>
+
+        <!-- Topic Content Area -->
+        <div class="topic-content" id="topicContent" style="display: none;">
+            <div class="topic-header">
+                <button class="back-btn" onclick="goToDashboard()">← Dashboard</button>
+                <h2 id="topicTitle"></h2>
+                <div class="progress-indicator">
+                    <span id="chunkProgress">1 / 6</span>
+                </div>
+            </div>
+
+            <div class="chunk-content" id="chunkContent">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+
+            <div class="navigation-controls">
+                <button id="prevBtn" onclick="previousChunk()" disabled>← Previous</button>
+                <button id="nextBtn" onclick="nextChunk()">Next →</button>
+            </div>
+        </div>
+
+        <!-- Memory Hacks Sidebar -->
+        <div class="memory-sidebar" id="memorySidebar">
+            <div class="sidebar-header">
+                <h3>🧠 Memory Hacks</h3>
+                <button class="close-sidebar" onclick="closeMemoryHacks()">×</button>
+            </div>
+            <div class="memory-content" id="memoryContent">
+                <!-- Memory hacks will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Confetti Container -->
+        <div id="confetti-container"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data/security.js"></script>
+    <script src="data/concurrency.js"></script>
+    <script src="data/recovery.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 

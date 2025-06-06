@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 AI Explorer - Interactive Learning</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Explorer</h1>
+            <p>Interactive journey through Problem Solving, Search, and Machine Learning!</p>
+        </header>
+
+        <div class="dashboard" id="dashboard">
+            <div class="topic-cards">
+                <div class="card problem-solving-card" onclick="openTopic('problem-solving')">
+                    <div class="card-icon">🧩</div>
+                    <h3>Problem Solving</h3>
+                    <p>States, operators & problem types!</p>
+                    <div class="card-progress">6 mini-adventures</div>
+                </div>
+
+                <div class="card search-card" onclick="openTopic('uninformed-search')">
+                    <div class="card-icon">🔍</div>
+                    <h3>Uninformed Search</h3>
+                    <p>Trees, algorithms & path finding!</p>
+                    <div class="card-progress">5 mini-adventures</div>
+                </div>
+
+                <div class="card ml-card" onclick="openTopic('machine-learning')">
+                    <div class="card-icon">🧠</div>
+                    <h3>Machine Learning</h3>
+                    <p>Learning from data & experience!</p>
+                    <div class="card-progress">4 mini-adventures</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="random-btn" onclick="randomChallenge()">
+                    🎲 Random Challenge
+                </button>
+                <button class="memory-hacks-btn" onclick="showMemoryHacks()">
+                    🧠 Memory Hacks
+                </button>
+            </div>
+        </div>
+
+        <!-- Topic Content Area -->
+        <div class="topic-content" id="topicContent" style="display: none;">
+            <div class="topic-header">
+                <button class="back-btn" onclick="goBack()">← Back to Topics</button>
+                <h2 id="topicTitle"></h2>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="main-content" id="mainContent">
+                    <!-- Dynamic content loaded here -->
+                </div>
+
+                <div class="sidebar">
+                    <div class="memory-hacks" id="memoryHacks">
+                        <h4>🧠 Memory Hack</h4>
+                        <div id="currentMemoryHack">
+                            Select a topic to see memory tricks!
+                        </div>
+                    </div>
+
+                    <div class="navigation">
+                        <button id="prevBtn" onclick="previousChunk()" disabled>← Previous</button>
+                        <span id="chunkIndicator">1 / 6</span>
+                        <button id="nextBtn" onclick="nextChunk()">Next →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Memory Hacks Modal -->
+        <div class="modal" id="memoryHacksModal">
+            <div class="modal-content">
+                <span class="close" onclick="closeMemoryHacks()">&times;</span>
+                <h2>🧠 AI Memory Hacks</h2>
+                <div id="allMemoryHacks">
+                    <div class="memory-section">
+                        <h3>🧩 Problem Solving</h3>
+                        <ul>
+                            <li><strong>Problem = GAP:</strong> Current state to Goal state with Actions and Plans</li>
+                            <li><strong>SOME:</strong> <u>S</u>ingle-state, <u>O</u>bservable, <u>M</u>ultiple-state, <u>E</u>xploration</li>
+                            <li><strong>ISOG:</strong> <u>I</u>nitial state, <u>S</u>uccessor function, g<u>O</u>al test, path <u>G</u>ost</li>
+                        </ul>
+                    </div>
+                    <div class="memory-section">
+                        <h3>🔍 Uninformed Search</h3>
+                        <ul>
+                            <li><strong>Tree = FAMILY:</strong> Root (parent), Branches (siblings), Leaves (children)</li>
+                            <li><strong>OPEN vs CLOSED:</strong> OPEN = "To-Do List", CLOSED = "Done List"</li>
+                            <li><strong>GTC:</strong> <u>G</u>enerator, <u>T</u>ester, <u>C</u>ost function</li>
+                        </ul>
+                    </div>
+                    <div class="memory-section">
+                        <h3>🧠 Machine Learning</h3>
+                        <ul>
+                            <li><strong>ML = PTE:</strong> <u>P</u>erformance improves with <u>T</u>ask and <u>E</u>xperience</li>
+                            <li><strong>Big Data = VOLUME:</strong> Vast amounts of data for learning patterns</li>
+                            <li><strong>Classification = SORTING:</strong> Like sorting mail into categories</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="data/problem-solving.js"></script>
+    <script src="data/uninformed-search.js"></script>
+    <script src="data/machine-learning.js"></script>
+</body>
+</html> 
