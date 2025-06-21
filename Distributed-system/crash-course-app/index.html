@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Distributed Systems Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Distributed Systems Explorer</h1>
+            <p>Interactive journey through naming, synchronization, and consistency!</p>
+        </header>
+
+        <div class="dashboard" id="dashboard">
+            <div class="topic-cards">
+                <div class="card naming-card" onclick="openTopic('naming')">
+                    <div class="card-icon">🏷️</div>
+                    <h3>Chapter 4: Naming</h3>
+                    <p>Names, addresses & resolution magic!</p>
+                    <div class="card-progress">6 mini-adventures</div>
+                </div>
+
+                <div class="card sync-card" onclick="openTopic('synchronization')">
+                    <div class="card-icon">⏰</div>
+                    <h3>Chapter 5: Synchronization</h3>
+                    <p>Time travel & coordination tricks!</p>
+                    <div class="card-progress">5 mini-adventures</div>
+                </div>
+
+                <div class="card consistency-card" onclick="openTopic('consistency')">
+                    <div class="card-icon">🔄</div>
+                    <h3>Chapter 6: Consistency</h3>
+                    <p>Keeping replicas in harmony!</p>
+                    <div class="card-progress">5 mini-adventures</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="random-btn" onclick="randomChallenge()">
+                    🎲 Random Challenge
+                </button>
+                <button class="memory-hacks-btn" onclick="showMemoryHacks()">
+                    🧠 Memory Hacks
+                </button>
+            </div>
+        </div>
+
+        <div class="content-area" id="contentArea" style="display: none;">
+            <div class="content-header">
+                <button class="back-to-dashboard" onclick="backToDashboard()">🏠 Dashboard</button>
+                <div class="navigation">
+                    <button id="prevBtn" onclick="prevChunk()">← Previous</button>
+                    <span id="chunkProgress">1 / 6</span>
+                    <button id="nextBtn" onclick="nextChunk()">Next →</button>
+                </div>
+            </div>
+
+            <div class="content-main">
+                <div class="content-body" id="contentBody">
+                    <!-- Dynamic content will be loaded here -->
+                </div>
+                <div class="memory-sidebar" id="memorySidebar">
+                    <h4>💡 Memory Hack</h4>
+                    <div id="memoryTip">
+                        <!-- Memory tips will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-section" id="quizSection" style="display: none;">
+                <!-- Quiz content will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Modal for random challenges -->
+        <div class="modal" id="challengeModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>🎯 Random Challenge</h3>
+                    <button class="close-modal" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="modal-body" id="challengeContent">
+                    <!-- Challenge content -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="data/naming.js"></script>
+    <script src="data/synchronization.js"></script>
+    <script src="data/consistency.js"></script>
+</body>
+</html> 
